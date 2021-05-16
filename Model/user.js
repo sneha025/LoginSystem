@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require("uuid");
 const Schema = mongoose.Schema;
 
 const UserModel = new Schema({
-  userId: uuidv4(),
+  _id: mongoose.Schema.Types.ObjectId,
   userName: { type: String, required: true },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
@@ -13,8 +13,7 @@ const UserModel = new Schema({
   confirmPassword: { type: String, required: true },
 });
 
-
 // Compile model from schema
-//export model 
+//export model
 //name,Model,collection
-module.exports =mongoose.model('user',UserModel,'users')
+module.exports = mongoose.model("user", UserModel, "users");
